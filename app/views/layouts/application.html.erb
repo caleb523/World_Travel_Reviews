@@ -4,12 +4,28 @@
     <title>Project</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to root_path do %>
+        <%= image_tag "LogoSmall.png", class: "mx-auto d-block", :alt => "avatar" %>
+      <% end %>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+        <ul class="navbar-nav m1-auto">
+          <li class="nav-item <%= active_class(home_path) %><%= active_class(root_path) %>"> <%# we include the root path as well because the user could be on the home page without being on /home%>
+            <%= link_to 'Home', root_path, class: 'nav-link'%>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Create account', root_path, class: 'nav-link'%> <%# Placeholder path, will need to be updated to the create account path later%>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
