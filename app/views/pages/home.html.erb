@@ -1,13 +1,22 @@
 <main role="main" class="container">
   <div class="starter-template">
-    <h1><%= image_tag "LogoDark.png", class: "mx-auto d-block", :alt => "avatar" %> <br>
-      <br>
+    <h1><br>
+    <%= image_tag "LogoNewColor.png", class: "mx-auto d-block", :alt => "WorldTravelReview" %> <br>
       <br>
     </h1>
     <h2><small>Search for a city</small><br>
     </h2>
+    <%#
     <form class="form-inline my-2 my-lg-0 justify-content-center">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    %>
   </div>
+</main>
+<div class="search-bar">
+  <input type="text" placeholder="Enter city name" required>
+</input>
+  <div class="search-icon"><div class="searchlogo"><%= image_tag "SearchLogo.png" %></div></div>
+  
+</div>
