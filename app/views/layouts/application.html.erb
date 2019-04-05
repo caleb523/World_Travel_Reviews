@@ -8,6 +8,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+      <div id="masthead"></div>
+
+    <% if not current_page?(root_path)%>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #2d3640;">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,6 +51,7 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+        <% end %>
     <%= yield %>
   </body>
 </html>

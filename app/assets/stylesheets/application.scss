@@ -25,12 +25,34 @@
   line-height: 45px;
 }
 
+@keyframes slideleft {
+  from {
+      background-position: 0%;
+  }
+  
+  to {
+      background-position: 900%;
+  }
+}
+
+@-webkit-keyframes slideleft {
+  from {
+      background-position: 0%;
+  }
+  to {
+      background-position: 900%;
+  }
+}
+
 body {
   padding-top: 5rem;
   color: #1d2731; 
   background-image: url("Background.png");
-  background-size: cover;
-  background-position: center center;
+  background-repeat: repeat-x;
+  animation: slideleft 600s infinite linear;
+  -webkit-animation: slideleft 600s infinite linear;
+  width: 100%;
+  height: 100vh;
 }
 h1, h2, h3 {
   color: #1d2731;
@@ -67,4 +89,11 @@ nav a,
 nav a:after,
 nav a:before {
   transition: all .5s;
+}
+
+
+
+#masthead {
+  background-image: url('http://static.communitytable.parade.com/wp-content/uploads/2014/06/dogs-in-world-cup-jerseys-ftr.jpg');
+
 }
