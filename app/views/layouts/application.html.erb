@@ -17,12 +17,23 @@
       <% end %>
       <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
         <ul class="navbar-nav m1-auto">
-          <li class="nav-item <%= active_class(home_path) %><%= active_class(root_path) %>"> <%# we include the root path as well because the user could be on the home page without being on /home%>
-            <%= link_to 'Home', root_path, class: 'nav-link'%>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Create account', root_path, class: 'nav-link'%> <%# Placeholder path, will need to be updated to the create account path later%>
-          </li>
+          <% if user_signed_in? %>
+            <span class="navbar-text">Logged in as <%= current_user.username%>
+            </span>
+            <li class="nav-item <%= active_class(edit_user_registration_path) %>"%>
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
+            </li>
+            <li class="nav-item"%>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+            </li>
+          <% else %>
+            <li class="nav-item <%= active_class(new_user_registration_path) %>">
+              <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %>
+            </li>
+            <li class="nav-item <%= active_class(new_user_session_path) %>">
+              <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </nav>
