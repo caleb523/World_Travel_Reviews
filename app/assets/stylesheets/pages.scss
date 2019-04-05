@@ -1,3 +1,140 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* SHIFT */
+nav.shift a {
+    position:relative;
+    z-index: 1;
+  }
+  nav.shift a:hover {
+    color: #91640F;
+  }
+  nav.shift a:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 1px;
+    content: '.';
+    color: transparent;
+    background: #d9b310;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+  }
+  nav.shift a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  $size: 40px;
+  
+  .search-bar {
+    height: auto;
+    width: auto;
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    
+    input {
+      height: 88px;
+      width: 88px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      font-size: 18px;
+      border: $size/10 solid #1d2731;
+      border-radius: 88px;
+      cursor: pointer;
+      background-color: #0b3c5d;
+      transition: all 0.5s ease-out;
+      
+      color: transparent;
+      &::placeholder {
+        color: transparent;
+      }
+      
+      &:invalid {
+        box-shadow: none;
+      }
+      
+      &:hover {
+        border: $size/10 solid #2d3640;
+          background-color: #c3c3c3;
+      }
+      
+      &:focus, &:valid {
+        width: 600px;
+        border: $size/10 solid #2d3640;
+        outline: none;
+        cursor: auto;
+        background-color: #ffffff;
+        color: #000;
+        
+        &::placeholder {
+          color: #999;
+        }
+        
+        + .search-icon {
+          z-index: 1;
+          border-color: #2d3640;
+          right: 25px;
+          
+          &:after {
+            background-color: #2d3640;
+          }
+      }
+      }
+    }
+  }
+  
+  
+  
+  .search-icon {
+    display: inline-block;
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+    border: $size/10 solid #fffff0;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    z-index: 1;
+      pointer-events: none;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      top: $size/2 + $size/4*1.414 + $size/10 - 7;
+      left: $size/2 + $size/4*1.414 - 7;
+      transform: rotate(45deg);
+      height: $size/10;
+      width: $size/2;
+      background-color: #fffff0;
+      border-radius: 10px;
+    }
+    
+  }
+  
+  .searchlogo {
+    position: relative;
+    right: 35px;
+    bottom: 35px;
+    z-index: 0;
+  }
