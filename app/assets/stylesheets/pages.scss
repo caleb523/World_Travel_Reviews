@@ -1,45 +1,6 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-/* SHIFT */
-nav.shift a {
-    position:relative;
-    z-index: 1;
-  }
-  nav.shift a:hover {
-    color: #91640F;
-  }
-  nav.shift a:after {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    height: 1px;
-    content: '.';
-    color: transparent;
-    background: #d9b310;
-    visibility: none;
-    opacity: 0;
-    z-index: -1;
-  }
-  nav.shift a:hover:after {
-    opacity: 1;
-    visibility: visible;
-    height: 100%;
-  }
-  
-  html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
   
   $size: 40px;
   
@@ -76,7 +37,16 @@ nav.shift a {
       
       &:hover {
         border: $size/10 solid #2d3640;
-          background-color: #c3c3c3;
+          background-color: transparent;
+          + .search-icon {
+            transition: all 0.5s ease-out;
+            z-index: 1;
+            border-color: #d9b310;
+            &:after {
+              transition: all 0.5s ease-out;
+              background-color: #d9b310;
+            }
+          }
       }
       
       &:focus, &:valid {
@@ -84,7 +54,7 @@ nav.shift a {
         border: $size/10 solid #2d3640;
         outline: none;
         cursor: auto;
-        background-color: #ffffff;
+        background-color: #fffff0;
         color: #000;
         
         &::placeholder {
@@ -93,13 +63,13 @@ nav.shift a {
         
         + .search-icon {
           z-index: 1;
-          border-color: #2d3640;
+          border-color: #d9b310;
           right: 25px;
           
           &:after {
-            background-color: #2d3640;
+            background-color: #d9b310;
           }
-      }
+        }
       }
     }
   }
@@ -243,7 +213,7 @@ nav.shift a {
   
   @keyframes moveUp {
     0% {
-      background: #ffffff;
+      background: #fffff0;
       top: 100%;
     }
     50% {
