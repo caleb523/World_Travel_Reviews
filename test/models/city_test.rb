@@ -20,8 +20,14 @@ class CityTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-  test "City name must be a valid current name or past name of a city" do
+  test "City name should be valid" do
     one = cities(:one)
     assert one.valid?
+  end
+
+  test "City name must be present" do
+    one = cities(:one)
+    one.city_name = " "
+    assert_not one.valid?
   end
 end
