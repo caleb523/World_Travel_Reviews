@@ -7,6 +7,7 @@
 #  country_name :string
 #  reply        :text
 #  review       :text
+#  reviewed_by  :string
 #  state_name   :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
