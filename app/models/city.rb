@@ -14,4 +14,18 @@
 #
 
 class City < ApplicationRecord
+    validates_each :city_name, length: { maximum: 60 }, presence: true do |model, attr, value|
+        model.errors.add(attr, 'must start with upper case') if value =~ /\A[a-z]/
+    end
+    validates :country_name, length: { maximum: 60 }, presence: true do |model, attr, value|
+        model.errors.add(attr, 'must start with upper case') if value =~ /\A[a-z]/
+    end
+    validates :reply, length: { maximum: 5000 }, presence: true
+    validates :review, length: { maximum: 5000 }, presence: true
+    validates :reviewed_by, length: { maximum: 30 }, presence: true do |model, attr, value|
+        model.errors.add(attr, 'must start with upper case') if value =~ /\A[a-z]/
+    end
+    validates :state_name, length: { maximum: 60 }, presence: true do |model, attr, value|
+        model.errors.add(attr, 'must start with upper case') if value =~ /\A[a-z]/
+    end
 end
