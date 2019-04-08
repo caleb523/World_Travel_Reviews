@@ -18,6 +18,15 @@
 @import "bootstrap";
 
 
+.alert.alert-success {
+  background-color: #d9b310;
+  color: #fffff0;
+}
+
+.alert.alert-danger {
+  background-color: #cd225e;
+  color: #1d2731;
+}
 
 .fixed-top {
   padding-top: 0rem;
@@ -25,12 +34,35 @@
   line-height: 45px;
 }
 
+@keyframes slideleft {
+  from {
+      background-position: 0%;
+  }
+  
+  to {
+      background-position: 900%;
+  }
+}
+
+@-webkit-keyframes slideleft {
+  from {
+      background-position: 0%;
+  }
+  to {
+      background-position: 900%;
+  }
+}
+
 body {
   padding-top: 5rem;
   color: #1d2731; 
+  background-color: #ffffff;
   background-image: url("Background.png");
-  background-size: cover;
-  background-position: center center;
+  background-repeat: repeat-x;
+  animation: slideleft 600s infinite linear;
+  -webkit-animation: slideleft 600s infinite linear;
+  background-size: contain;
+
 }
 h1, h2, h3 {
   color: #1d2731;
@@ -60,7 +92,7 @@ div.invalid-feedback {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: #328cc1;
+  color: #d9b310;
 }
 
 nav a,
@@ -68,3 +100,4 @@ nav a:after,
 nav a:before {
   transition: all .5s;
 }
+

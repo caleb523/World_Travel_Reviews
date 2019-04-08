@@ -1,25 +1,57 @@
-<main role="main" class="container">
+<body class="welcome">
+
+  <span id="splash-overlay" class="splash"></span><main role="main" class="container">
+  </span>
+  <span id="welcome" class="z-depth-4"></span>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #2d3640;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+        <ul class="navbar-nav m1-auto">
+          <% if user_signed_in? %>
+            <li class="navbar-text">Logged in as</li>
+            <li class="nav-item <%= active_class(user_path(current_user.username)) %>"><nav class="shift"><%= link_to current_user.username, user_path(current_user.username), :class => 'nav-link' %></nav></li>
+            <li class="nav-item"%>
+              <nav class="shift">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+              </nav>
+            </li>
+          <% else %>
+            <li class="nav-item <%= active_class(new_user_registration_path) %>">
+              <nav class="shift">
+                <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %>
+              </nav>
+            </li>
+            <li class="nav-item <%= active_class(new_user_session_path) %>">
+              <nav class="shift">
+                <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+              </nav>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </body>
   <div class="starter-template">
     <h1>
       <%= image_tag "LogoNewColor.png", class: "mx-auto d-block", :alt => "WorldTravelReview" %>
     </h1>
     <h2>
-    <br><br><br><br><br><br>
-    <small>Search for a city</small>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <small>Search for a city</small>
     </h2>
-    <%#
-    <form class="form-inline my-2 my-lg-0 justify-content-center">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    %>
   </div>
-<a>
-  
-  <div class="search-bar">
-    <input type="text" placeholder="Enter city name" required></input>
+  <form class="search-bar" action="/users" method="get" autocomplete="off">
+    <input type="simple-text" name="search" placeholder="Enter city name" required></input>
     <div class="search-icon">
-      <div class="searchlogo"><%= image_tag "SearchLogo.png" %></div>
-    </div>
+    <div class="searchlogo"><%= image_tag "SearchLogo.png" %></div>
   </div>
-</a>
+  </form>
+</body>
