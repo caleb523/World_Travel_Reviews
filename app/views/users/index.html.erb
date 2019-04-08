@@ -1,6 +1,6 @@
 <body>
 <br /><br /><br />
-
+<h1>Search results for <%=@search%></h1>
 <% @users.each do |user| %>
     <ul>
     <li><%= link_to user.username, user_path(user.username)%></li>

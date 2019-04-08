@@ -20,20 +20,21 @@
 #
 
 class User < ApplicationRecord
+  validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   def user_params
     params.require(:user).permit(:id, :email, :username, :search)
   end
-  def self.search(search)
-      if search
-        self.where("lower(username) or lower(email) like lower(?)", "%#{search}%")
-      else
-        User.all
-      end
-  end
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-  
+  def self.search(search)
+    if search
+      self.where("lower(username) or lower(email) like lower(?)", "%#{search}%")
+    else
+      User.all
+    end
+  end
 end
