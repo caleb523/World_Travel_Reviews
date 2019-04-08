@@ -26,14 +26,14 @@
         <ul class="navbar-nav m1-auto">
           <% if user_signed_in? %>
             <li class="navbar-text">Logged in as:</li>
-            <li class="nav-item <%= active_class(user_path(current_user.username)) %>"><nav class="shift"><%= link_to current_user.username, user_path(current_user.username), :class => 'nav-link' %></nav></li>
+            <li class="nav-item <%= user_path(current_user.username) %>"><nav class="shift"><%= link_to current_user.username, user_path(current_user.username), :class => 'nav-link' %></nav></li>
             <li class="nav-item"%>
               <nav class="shift">
                 <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
               </nav>
             </li>
           <% else %>
-            <li class="nav-item <%= active_class(new_user_registration_path) %>">
+            <li class="nav-item <%= new_user_registration_path %>">
               <nav class="shift">
                 <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %>
               </nav>
