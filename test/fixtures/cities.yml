@@ -5,9 +5,6 @@
 #  id           :integer          not null, primary key
 #  city_name    :string
 #  country_name :string
-#  reply        :text
-#  review       :text
-#  reviewed_by  :string
 #  state_name   :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
@@ -19,14 +16,10 @@ one:
   city_name: St. Louis
   state_name: Missouri
   country_name: United States of America
-  review: The "Show Me State" needs more attractions to "please me."
-  reply: I'm from St. Louis and we like to keep it simple, thank you very much.
-  reviewed_by: D. Thomas
+
 
 two:
   city_name: Gaitlinburg
   state_name: Tennessee
   country_name: United States of America
-  review: The Smokey Mountains are breath-taking. This is a nature-lover's paradise.
-  reply: This is a very helpful review. Made the decision of where to visit next easy for my me and my family.
-  reviewed_by: C. Kelsey
+

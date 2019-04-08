@@ -10,17 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_07_155314) do
+ActiveRecord::Schema.define(version: 2019_04_08_224754) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
     t.string "state_name"
     t.string "country_name"
-    t.text "review"
-    t.text "reply"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "reviewed_by"
   end
 
   create_table "users", force: :cascade do |t|
