@@ -1,0 +1,4 @@
+<% @users = User.all %>
+<% @users.each do |user| %>
+    <p><%= link_to user.username, user_path(user.username), :class => 'nav-link' %></p>
+<% end %>

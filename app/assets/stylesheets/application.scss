@@ -13,30 +13,58 @@
  * // = require_tree .
  * // = require_self
  */
- @import "bootstrap";
- body {
-    padding-top: 5rem;
-  }
-  .starter-template {
-    padding: 3rem 1.5rem;
-    text-align: center;
-  }
 
-  div.field {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
 
-  div.actions {
-    padding-top: 1.5rem;
-    padding-bottom: 0.5rem;
-  }
+@import "bootstrap";
 
-  label,
-  input {
-    display: block;
-  }
 
-  div.invalid-feedback {
-    display: block;
-  }
+
+.fixed-top {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  line-height: 45px;
+}
+
+body {
+  padding-top: 5rem;
+  color: #1d2731; 
+  background-image: url("Background.png");
+  background-size: cover;
+  background-position: center center;
+}
+h1, h2, h3 {
+  color: #1d2731;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+div.field {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+div.actions {
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+label,
+input {
+  display: block;
+}
+
+div.invalid-feedback {
+  display: block;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #328cc1;
+}
+
+nav a,
+nav a:after,
+nav a:before {
+  transition: all .5s;
+}

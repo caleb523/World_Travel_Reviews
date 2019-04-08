@@ -1,0 +1,11 @@
+<h1><%= @user.username %></h1>
+
+
+
+<br /><br /><br />
+<p>
+<% if @user.username == current_user.username %>
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
+<% end %>
+<br />
+</p>
