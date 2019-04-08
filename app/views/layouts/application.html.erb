@@ -4,12 +4,45 @@
     <title>Project</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <%= link_to root_path do %>
+        <%= image_tag "LogoSmall.png", class: "mx-auto d-block", :alt => "avatar" %>
+      <% end %>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+        <ul class="navbar-nav m1-auto">
+          <% if user_signed_in? %>
+            <span class="navbar-text">Logged in as <%= current_user.username%>
+            </span>
+            <li class="nav-item <%= active_class(edit_user_registration_path) %>"%>
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-link' %>
+            </li>
+            <li class="nav-item"%>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+            </li>
+          <% else %>
+            <li class="nav-item <%= active_class(new_user_registration_path) %>">
+              <%= link_to "Sign up", new_user_registration_path, :class => 'nav-link'  %>
+            </li>
+            <li class="nav-item <%= active_class(new_user_session_path) %>">
+              <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
