@@ -93,7 +93,7 @@ nav.shift a {
         border: $size/10 solid #2d3640;
         outline: none;
         cursor: auto;
-        background-color: #fffff0;
+        background-color: #ffffff;
         color: #000;
         
         &::placeholder {
@@ -120,7 +120,7 @@ nav.shift a {
     height: $size;
     width: $size;
     border-radius: 50%;
-    border: $size/10 solid #fffff0;
+    border: $size/10 solid #ffffff;
     position: absolute;
     right: 30px;
     top: 20px;
@@ -135,7 +135,7 @@ nav.shift a {
       transform: rotate(45deg);
       height: $size/10;
       width: $size/2;
-      background-color: #fffff0;
+      background-color: #ffffff;
       border-radius: 10px;
     }
     
@@ -252,7 +252,7 @@ nav.shift a {
   
   @keyframes moveUp {
     0% {
-      background: #fffff0;
+      background: #ffffff;
       top: 100%;
     }
     50% {
