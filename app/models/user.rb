@@ -22,6 +22,18 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  def user_params
+    params.require(:user).permit(:id, :email, :username, :search)
+  end
+  def self.search(search)
+      if search
+        self.where(username: search)
+      else
+        User.all
+      end
+  end
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
 end
