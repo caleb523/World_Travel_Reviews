@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 City.create!( city_name: 'New Orleans', state_name: 'Louisiana', country_name: 'United States of America')
-City.create!( city_name: 'Singapore', state_name: 'Singapore', country_name: 'Singapore')
-City.create!( city_name: 'Lisbon', state_name: 'Portugal', country_name: 'Portugal')
-City.create!( city_name: 'Douala', state_name: 'Cameroon', country_name: 'Cameroon')
+City.create!( city_name: 'Singapore', country_name: 'Singapore')
+City.create!( city_name: 'Lisbon', country_name: 'Portugal')
+City.create!( city_name: 'Douala', country_name: 'Cameroon')
 City.create!( city_name: 'New York', state_name: 'New York', country_name: 'United States of America')
