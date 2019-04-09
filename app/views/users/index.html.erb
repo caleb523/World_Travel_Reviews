@@ -1,6 +1,5 @@
 <body>
-<br /><br /><br />
-<h1>Search results for <%=@search%></h1>
+<h1><% if @search.present? %>Search results for <%=@search%><% else %>List of all users<% end %></h1>
 <% @users.each do |user| %>
     <ul>
     <li><%= link_to user.username, user_path(user.username)%></li>

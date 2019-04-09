@@ -17,6 +17,9 @@
 
 @import "bootstrap";
 
+body nav #navbarsExampleDefault ul li {
+  font-size: 16px;
+}
 
 .alert.alert-success {
   background-color: #d9b310;
@@ -93,6 +96,10 @@ div.invalid-feedback {
 
 .navbar-dark .navbar-nav .nav-link {
   color: #d9b310;
+}
+
+body h4 a:link {
+  color: #328cc1;
 }
 
 nav a,

@@ -20,6 +20,12 @@ class CityTest < ActiveSupport::TestCase
     assert city.valid?
   end
 
+  test "State name is not required" do
+    city = cities(:one)
+    city.state_name = ""
+    assert city.valid?
+  end
+
   test "City name is not be present" do
     city = cities(:one)
     city.city_name = " "

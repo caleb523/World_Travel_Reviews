@@ -1,0 +1,23 @@
+<body>
+  <a>
+  <form class="search-bar" action="/cities" method="get" autocomplete="off">
+    <input type="simple-text" name="search" placeholder="Enter location name" required></input>
+    <div class="search-icon">
+    <div class="searchlogo"><%= image_tag "SearchLogo.png" %></div>
+  </div>
+  </form>
+  </a>
+  <h1><% if @search.present? %>Search results for <%=@search%><% else %>Here are all cities currently in our database<% end %></h1>
+  <% @cities.each do |city| %>
+    <ul>
+        <li><% if city.state_name.present? %> 
+            <%= link_to city.city_name+', '+city.state_name+', '+city.country_name, city_path(city.id)%>  
+        <%else%>
+            <%= link_to city.city_name+', '+city.country_name, city_path(city.id)%>
+        <%end%>
+      </li>
+    </ul>
+  <% end %>
+  <h3><% if @search.present? %>Don't see the city you're looking for?<% end %></h3>
+  <h4><%= link_to image_tag("PlusSign.png")+"Add new city", new_path()%></h4>
+</body>

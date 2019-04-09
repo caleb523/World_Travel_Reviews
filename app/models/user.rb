@@ -32,7 +32,7 @@ class User < ApplicationRecord
 
   def self.search(search)
     if search
-      self.where("lower(username) or lower(email) like lower(?)", "%#{search}%")
+      self.where("lower(username) like lower(?) OR lower(email) like lower(?)", "%#{search}%", "%#{search}%")
     else
       User.all
     end
