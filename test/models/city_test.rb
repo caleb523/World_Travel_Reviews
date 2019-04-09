@@ -18,11 +18,14 @@ class CityTest < ActiveSupport::TestCase
   # end
 
   test "City name should be valid" do
-    one = cities(:one)
-    assert one.valid?
+    present_cityname = cities(:one)
+    present_cityname.city_name = "Walker"
+    assert present_cityname.valid?
+    # one = cities(:one)
+    # assert_not one.valid?
   end
 
-  test "City name must be present" do
+  test "City name must not be present" do
     one = cities(:one)
     one.city_name = " "
     assert_not one.valid?

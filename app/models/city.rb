@@ -11,7 +11,7 @@
 #
 
 class City < ApplicationRecord
-    validates :city_name, length: { maximum: 60 }, presence: true
-    validates :country_name, length: { maximum: 60 }, presence: true
-    validates :state_name, length: { maximum: 60 }, presence: true
+    validates :city_name, length: { maximum: 60 }, presence: true, allow_blank: false
+    validates :country_name, length: { maximum: 60 }, presence: true, allow_blank: false
+    validates :state_name, length: { maximum: 60 }, presence: true, allow_blank: false
 end
