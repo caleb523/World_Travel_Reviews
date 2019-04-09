@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: cities
+#
+#  id           :integer          not null, primary key
+#  city_name    :string
+#  country_name :string
+#  state_name   :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city_name: St. Louis
+  state_name: 
+  country_name: United States of America
+
+
+two:
+  city_name: Gaitlinburg
+  state_name: 
+  country_name: United States of America
+
