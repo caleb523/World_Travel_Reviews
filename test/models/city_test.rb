@@ -13,21 +13,22 @@
 require 'test_helper'
 
 class CityTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
 
   test "City name should be valid" do
-    present_cityname = cities(:one)
-    present_cityname.city_name = "Walker"
-    assert present_cityname.valid?
-    # one = cities(:one)
-    # assert_not one.valid?
+    city = cities(:one)
+    city.state_name = "Walker"
+    assert city.valid?
   end
 
-  test "City name must not be present" do
-    one = cities(:one)
-    one.city_name = " "
-    assert_not one.valid?
+  test "City name is not be present" do
+    city = cities(:one)
+    city.city_name = " "
+    assert_not city.valid?
+  end
+
+  test "Country name is not be present" do
+    city = cities(:one)
+    city.country_name = " "
+    assert_not city.valid?
   end
 end

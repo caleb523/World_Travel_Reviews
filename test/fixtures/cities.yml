@@ -14,12 +14,12 @@
 
 one:
   city_name: St. Louis
-  state_name: Missouri
+  state_name: 
   country_name: United States of America
 
 
 two:
   city_name: Gaitlinburg
-  state_name: Tennessee
+  state_name: 
   country_name: United States of America
 
