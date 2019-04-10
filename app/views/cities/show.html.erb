@@ -3,19 +3,18 @@
 <br />
 <br />
 <body>
-  <div class="col-md-7 col-md-offset-1">
     <% if @reviews.blank? %>
       <h3>No reviews just yet, would you like to add the first?</h3>
       <h2><%= link_to "Write Review", new_city_review_path(@city)%></h2>
     <% else %>
       <% @reviews.each do |review| %>
         <div class="reviews">
-          <h4><%= review.user.username %></h4>
+          <h4><%= link_to review.user.username, user_path(review.user.username)%></h4>
           <p><%= review.rating %></p>
           <p><%= review.comment %></p>
         </div>
       <% end %>
+      <h2><%= link_to "Write Review", new_city_review_path(@city)%></h2>
     <% end %>
-  </div>
   <%= link_to 'Back', cities_path %>
 </body>
