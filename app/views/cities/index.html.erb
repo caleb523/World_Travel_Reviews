@@ -1,13 +1,5 @@
 <body>
-  <a>
-  <form class="search-bar" action="/cities" method="get" autocomplete="off">
-    <input type="simple-text" name="search" placeholder="Enter location name" required></input>
-    <div class="search-icon">
-    <div class="searchlogo"><%= image_tag "SearchLogo.png" %></div>
-  </div>
-  </form>
-  </a>
-  <h1><% if @search.present? %>Search results for <%=@search%><% else %>Here are all cities currently in our database<% end %></h1>
+  <h1><% if @search.present? %><% if @cities.present? %>Search results for <%=@search%><% else %>No results for <%=@search%><%end%><% else %>Here are all cities currently in our database<% end %></h1>
   <% @cities.each do |city| %>
     <ul>
         <li><% if city.state_name.present? %> 

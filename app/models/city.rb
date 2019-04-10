@@ -14,12 +14,13 @@ class City < ApplicationRecord
     validates :city_name, length: { maximum: 60 }, presence: true
     validates :state_name, length: { maximum: 60 }
     validates :country_name, length: { maximum: 60 }, presence: true
+    validates_uniqueness_of :city_name, :scope => [:state_name, :country_name]
 
     def self.search(search)
         if search
-          self.where("lower(city_name) like lower(?) OR lower(state_name) like lower(?) OR lower(country_name) like lower(?)", "%#{search}%", "%#{search}%", "%#{search}%")
+          self.where("lower(city_name) like lower(?) OR lower(state_name) like lower(?) OR lower(country_name) like lower(?)", "%#{search}%", "%#{search}%", "%#{search}%").order(:city_name)
         else
-          City.all
+          City.all.order(:city_name)
         end
     end
     def user_params

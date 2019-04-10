@@ -17,6 +17,11 @@
 
 @import "bootstrap";
 
+body nav navbar.navbar-expand-md.navbar-dark.fixed-top,
+body a form.search-bar {
+  position: fixed;
+}
+
 body nav #navbarsExampleDefault ul li {
   font-size: 16px;
 }
@@ -98,6 +103,7 @@ div.invalid-feedback {
   color: #d9b310;
 }
 
+a:link,
 body h4 a:link {
   color: #328cc1;
 }
