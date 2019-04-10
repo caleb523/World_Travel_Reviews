@@ -4,7 +4,7 @@
 <br />
 <body>
     <% if @reviews.blank? %>
-      <h3>No reviews just yet, would you like to add the first?</h3>
+      <h3>No reviews yet, would you like to add the first?</h3>
       <h2><%= link_to "Write Review", new_city_review_path(@city)%></h2>
     <% else %>
       <% @reviews.each do |review| %>
@@ -14,7 +14,7 @@
           <p><%= review.comment %></p>
         </div>
       <% end %>
-      <h2><%= link_to "Write Review", new_city_review_path(@city)%></h2>
+      <h2><%= link_to "Write a review", new_city_review_path(@city)%></h2>
     <% end %>
   <%= link_to 'Back', cities_path %>
 </body>

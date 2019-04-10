@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @review = Review.where(city_id: @city.id, user_id: current_user.id).order("created_at DESC")
   end
 
   def create
