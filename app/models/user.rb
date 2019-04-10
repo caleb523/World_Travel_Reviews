@@ -8,7 +8,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  username               :string
+#  username               :string           not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -32,7 +32,7 @@ class User < ApplicationRecord
 
   def self.search(search)
     if search
-      self.where("lower(username) or lower(email) like lower(?)", "%#{search}%")
+      self.where("lower(username) like lower(?) OR lower(email) like lower(?)", "%#{search}%", "%#{search}%")
     else
       User.all
     end
