@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   match '/cities/:id',     to: 'cities#show',       via: 'get'
   devise_for :users, :path_prefix => 'd'
   resources :users, :only =>[:show]
-  resources :cities, :only =>[:show]
   root to: 'pages#home'
+  resources :cities do
+  	resources :reviews, except: [:show, :index]
+  end
   get 'home', to: 'pages#home', as: 'home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,2 +1,21 @@
 <h1><%= @city.city_name %>, <% if @city.state_name.present? %><%=@city.state_name%>, <%end%><%= @city.country_name %></h1>
-<br /><br /><br />
+<br />
+<br />
+<br />
+<body>
+  <div class="col-md-7 col-md-offset-1">
+    <% if @reviews.blank? %>
+      <h3>No reviews just yet, would you like to add the first?</h3>
+      <h2><%= link_to "Write Review", new_city_review_path(@city)%></h2>
+    <% else %>
+      <% @reviews.each do |review| %>
+        <div class="reviews">
+          <h4><%= review.user.username %></h4>
+          <p><%= review.rating %></p>
+          <p><%= review.comment %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to 'Back', cities_path %>
+</body>
