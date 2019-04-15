@@ -1,4 +1,3 @@
-<body>
   <h1><% if @search.present? %><% if @cities.present? %>Search results for <%=@search%><% else %>No results for <%=@search%><%end%><% else %>Here are all cities currently in our database<% end %></h1>
   <% @cities.each do |city| %>
     <ul>
@@ -12,4 +11,3 @@
   <% end %>
   <h3><% if @search.present? %>Don't see the city you're looking for?<% end %></h3>
   <h4><%= link_to image_tag("PlusSign.png")+"Add new city", new_path()%></h4>
-</body>

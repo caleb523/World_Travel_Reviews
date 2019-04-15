@@ -8,6 +8,7 @@
 #  state_name   :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  user_id      :integer
 #
 
 class City < ApplicationRecord
@@ -16,6 +17,8 @@ class City < ApplicationRecord
     validates :country_name, length: { maximum: 60 }, presence: true
     validates_uniqueness_of :city_name, :scope => [:state_name, :country_name]
 
+    has_many :reviews
+    
     def self.search(search)
         if search
           self.where("lower(city_name) like lower(?) OR lower(state_name) like lower(?) OR lower(country_name) like lower(?)", "%#{search}%", "%#{search}%", "%#{search}%").order(:city_name)

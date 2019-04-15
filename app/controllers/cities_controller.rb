@@ -5,6 +5,7 @@ class CitiesController < ApplicationController
   end
   def show
     @city = City.find_by_id(params[:id])
+    @reviews = Review.where(city_id: @city.id).order("created_at DESC")
   end
   def new
     @city = City.new

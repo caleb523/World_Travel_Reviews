@@ -5,5 +5,6 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find_by_username(params[:id])
+    @reviews = Review.where(user_id: @user.id).order("created_at DESC")
   end
 end
