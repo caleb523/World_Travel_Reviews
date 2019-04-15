@@ -70,7 +70,7 @@ body {
   animation: slideleft 600s infinite linear;
   -webkit-animation: slideleft 600s infinite linear;
   background-size: contain;
-
+  background-attachment: fixed;
 }
 h1, h2, h3 {
   color: #1d2731;
