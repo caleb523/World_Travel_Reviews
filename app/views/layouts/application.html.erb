@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <bg>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
@@ -62,6 +63,7 @@
     </a>
     <% end %>
     <%= yield %>
-    
+  </bg>
 </body>
+
 </html>
