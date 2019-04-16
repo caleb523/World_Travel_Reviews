@@ -8,19 +8,19 @@
   - Description: As a non-logged-in user, I want to be able to create an account so that I can post and access other site features
   - Estimate: 1.5
   - Priority: 10
-  - Status: Not started
+  - Status: Completed
 
 - US Update Account
   - Description: As a logged-in user, I want to be able to update my account so that I can change my email or password if I'd like
   - Estimate: 0.5
   - Priority: 20
-  - Status: Not started
+  - Status: Completed
 
 - US View Account
   - Description: As a user of any type, I want to be able to look at other user's accounts so I can see other reviews that they have done
   - Estimate: 2
   - Priority: 30
-  - Status: Not started
+  - Status: Completed
 
 - US Follow Account
   - Description: As a logged-in user, I want to be able to follow other reviewers so that I can keep track of the opinions of users I deem credible
@@ -46,13 +46,13 @@
   - Description: As a user of any type, I want to be able to search for various cities so that I can read the reviews left by other users
   - Estimate: 1.5
   - Priority: 90
-  - Status: Not started
+  - Status: Completed
 
 - US Post Review
   - Description: As a logged-in user, I want to be able to post reviews so I can share my opinions on various locations
   - Estimate: 1.5
   - Priority: 50
-  - Status: Not started
+  - Status: Completed
 
 - US Add Media
   - Description: As a logged-in user, I want to be able to add photos and videos to my reviews to provide additional context to them
