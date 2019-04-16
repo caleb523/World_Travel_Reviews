@@ -2,7 +2,7 @@
 
 - Project: COVEN-2
 - Iteration: Milestone 1
-- Demo Video URL: <https://youtu.be/xxx> (URL for demo video)
+- Demo Video URL: <https://youtu.be/pVZsy7zocxs>
 
 ## Who Did What
 
