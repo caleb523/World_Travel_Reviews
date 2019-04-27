@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2019_04_10_164015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "movie_id"
     t.integer "city_id"
   end
 

@@ -60,16 +60,21 @@ body nav #navbarsExampleDefault ul li {
       background-position: 900%;
   }
 }
-
-body {
-  padding-top: 5rem;
-  color: #1d2731; 
+bg {
+  height: 100%;
+  width: 100%;
   background-color: #ffffff;
   background-image: url("Background.png");
   background-repeat: repeat-x;
   animation: slideleft 600s infinite linear;
   -webkit-animation: slideleft 600s infinite linear;
   background-size: contain;
+  background-attachment: fixed;
+  padding: 0%;
+}
+body {
+  padding-top: 5rem;
+  color: #1d2731; 
   background-attachment: fixed;
 }
 h1, h2, h3 {
