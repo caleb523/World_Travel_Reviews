@@ -9,10 +9,11 @@
     <div class="row">
       <div class="col-md-4">
         <%= image_tag @city.image.url(:medium) %>
+        <div class="star-rating" data-score= <%= @avg_review %> ></div>
+        <em><%= "#{@reviews.length} reviews" %></em>
         <div class="table-responsive">
           <table class="table">
             <tbody>
-
               <tr>
                 <td><strong>Rating:</strong></td>
                 <td><%= @review.rating %></td>

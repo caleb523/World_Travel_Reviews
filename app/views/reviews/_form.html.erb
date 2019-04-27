@@ -16,6 +16,15 @@
     <%= form.text_area :comment %>
   </div>
 
+  <div class="field">
+    <div id="star-rating"></div>
+  </div>
+
+<script>
+  $('#star-rating').raty({path: '/assets/',
+  scoreName: 'review[rating]'});
+</script>
+
   <div class="actions">
     <%= form.submit %>
   </div>
