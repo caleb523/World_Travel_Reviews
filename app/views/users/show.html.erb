@@ -13,7 +13,7 @@
             <%= review.city.city_name %>, <% if review.city.state_name.present? %><%=review.city.state_name%>, <%end%><%= review.city.country_name %>
             <%end%>    
         </h4>
-          <p><%= review.rating %></p>
+          <div class="star-rating" data-score= <%= review.rating %> ></div>
           <p><%= review.comment %></p>
           <br />
         </div>
@@ -28,3 +28,12 @@
 <%end%>
 <br />
 </p>
+	<script>
+	    $('.star-rating').raty({
+	      path: '/assets/',
+	      readOnly: true,
+	      score: function() {
+	            return $(this).attr('data-score');
+	    }
+	  });
+	</script>

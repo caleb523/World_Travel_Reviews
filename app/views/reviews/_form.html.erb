@@ -10,23 +10,26 @@
       </ul>
     </div>
   <% end %>
+  <% if @find.blank?%>
+    <div class="field">
+      <div id="star-rating"></div>
+    </div>
 
-  <div class="field">
-    <div id="star-rating"></div>
-  </div>
+    <div class="field">
+      <%= form.label :comment %>
+      <%= form.text_area :comment %>
+    </div>
 
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
-  </div>
+  <script>
+    $('#star-rating').raty({path: '/assets/',
+    scoreName: 'review[rating]'});
+  </script>
 
-<script>
-  $('#star-rating').raty({path: '/assets/',
-  scoreName: 'review[rating]'});
-</script>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% else %>
+    <h3> You already wrote a review for this city, would you like to edit it? </h3>
+  <% end %>
   
 <% end %>
