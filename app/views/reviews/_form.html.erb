@@ -15,7 +15,17 @@
     <%= form.label :comment %>
     <%= form.text_area :comment %>
   </div>
-
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment, class: 'form-control' %>
+    <% if review.errors.full_messages_for(:comment).any? %>
+      <div class="invalid-feedback">
+        <%= review.errors.full_messages_for(:comment).each do |error_message| %>
+          <%= error_message %>.
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <div class="field">
     <div id="star-rating"></div>
   </div>
