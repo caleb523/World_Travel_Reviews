@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  comment    :text
-#  rating     :integer
+#  rating     :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  city_id    :integer
@@ -15,4 +15,6 @@
 class Review < ApplicationRecord
     belongs_to :user
     belongs_to :city
+    validates :rating, presence: true
+    validates :comment, presence: true
 end

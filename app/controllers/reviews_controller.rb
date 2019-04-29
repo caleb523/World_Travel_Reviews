@@ -64,7 +64,7 @@ class ReviewsController < ApplicationController
       params.require(:review).permit(:rating, :comment)
     end
 
-    def
+    def show
       @reviews = Review.where(city_id: @city.id).order("created_at DESC")
 
       if @reviews.blank?
