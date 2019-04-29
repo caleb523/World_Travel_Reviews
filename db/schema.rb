@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_164015) do
+ActiveRecord::Schema.define(version: 2019_04_29_063937) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 2019_04_10_164015) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "movie_id"
-    t.integer "city_id"
+    t.string "city_name"
+    t.string "state_code"
+    t.string "country_name"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_164015) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
