@@ -10,6 +10,7 @@
     </div>
   <% end %>
   <div class="field">
+    <%= form.label :rating %>
     <div id="star-rating" data-score= <%= review.rating %>></div>
   </div>
   <div class="field">
@@ -21,6 +22,13 @@
   </div>
   <script>
     $('#star-rating').raty({path: '/assets/',
-    scoreName: 'review[rating]'});
+    scoreName: 'review[rating]',
+    starHalf: 'Star-half.png',
+    starOff: 'Star-off.png',
+    starOn: 'Star-on.png',
+    score: function() {
+	      return $(this).attr('data-score');
+      }
+    });
   </script>
 <% end %>

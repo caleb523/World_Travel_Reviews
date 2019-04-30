@@ -10,9 +10,19 @@ ul li {
 h1 {
     width: 50%;
 }
+
+div.example {
+    column-count: 2;
+    -webkit-column-gap: 2em;
+    -moz-column-gap: 2em;
+    column-gap: 2em;
+}
+
 body div.reviews {
+    break-inside: avoid;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
     background-color: #ffffff;
-    width: 50%;
     border-style: solid;
     border-color: #1d2731;
     border-width: 1px;

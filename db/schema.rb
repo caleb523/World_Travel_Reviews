@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_192523) do
+ActiveRecord::Schema.define(version: 2019_04_29_213852) do
 
   create_table "cities", force: :cascade do |t|
     t.string "city_name"
@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 2019_04_29_192523) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "rating", null: false
+    t.float "rating", null: false
     t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "movie_id"
     t.integer "city_id"
   end
 
