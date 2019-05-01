@@ -1,31 +1,45 @@
 <h1><%= @city.city_name %>, <% if @city.state_name.present? %><%=@city.state_name%>, <%end%><br /><%= @city.country_name %></h1>
-<br />
-<br />
-<br />
     
     <% if @reviews.blank? %>
       <h3>No reviews yet, would you like to add the first?</h3>
       <h2><%= link_to "Write Review", new_city_review_path(@city)%></h2>
     <% else %>
-      <h3><%= "#{@reviews.length} reviews" %></h3>
-      <h4><div class="star-rating" data-score= <%= @avg_review %>>Average Score: </div></h4>
-      
-      <br /><br />
+      <h4><div class="star-rating1" data-score= <%= @avg_review %>></div></h4>
+      <h3><% if @reviews.length > 1%><%= "#{@reviews.length} reviews" %>
+      <% else %> <%= "1 review" %>
+      <% end %>
+      </h3>
+      <h2><%= link_to "Write a review", new_city_review_path(@city)%></h2>
+      <br /><br /><br /><br />
+      <div class="example">
       <% @reviews.each do |review| %>
         <div class="reviews">
           <h4><%= link_to review.user.username, user_path(review.user.username)%></h4>
           <div class="star-rating" data-score= <%= review.rating %> ></div>
+          <br />
           <p><%= review.comment %></p>
+          <%if review.user == current_user%>
+          <h4><%= link_to "Edit review", edit_city_review_path(@city, review)%></h4>
+          <% end %>
         </div>
         <br />
       <% end %>
-      <h2><%= link_to "Write a review", new_city_review_path(@city)%></h2>
+      </div>
     <% end %>
-  <%= link_to 'Back', cities_path %>
 	<script>
 	    $('.star-rating').raty({
 	      path: '/assets/',
 	      readOnly: true,
+	      score: function() {
+	            return $(this).attr('data-score');
+	    }
+    });
+    	$('.star-rating1').raty({
+	      path: '/assets/',
+        readOnly: true,
+        starHalf: 'Star-half.png',
+        starOff: 'Star-off.png',
+        starOn: 'Star-on.png',
 	      score: function() {
 	            return $(this).attr('data-score');
 	    }

@@ -1,6 +1,10 @@
 <h1>Editing Review</h1>
-
+<% if @review.user_id == current_user.id %>
 <%= render 'form', review: @review %>
+<% else %>
+<br />
+<h1>You don't have permission to edit this review!</h1>
+<h3>Are you sure you're logged in as the correct user?</h3>
+<% end %>
 
-<%= link_to 'Show', @review %> |
 <%= link_to 'Back', city_path(@city) %>

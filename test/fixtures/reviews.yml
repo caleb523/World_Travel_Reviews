@@ -4,10 +4,11 @@
 #
 #  id         :integer          not null, primary key
 #  comment    :text
-#  rating     :integer          not null
+#  rating     :float            not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  city_id    :integer
+#  movie_id   :integer
 #  user_id    :integer
 #
 
