@@ -21,7 +21,8 @@
           <br />
           <p><%= review.comment %></p>
           <%if review.user == current_user%>
-          <h4><%= link_to "Edit review", edit_city_review_path(@city, review)%></h4>
+          <h4><%= link_to "Edit review", edit_city_review_path(@city, review)%>
+          <danger><h4><%= link_to "Delete review", city_review_path(@city, review), method: :delete %></h4></danger></h4>
           <% end %>
         </div>
         <br />
