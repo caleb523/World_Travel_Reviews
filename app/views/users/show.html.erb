@@ -13,6 +13,7 @@
             <%= review.city.city_name %>, <% if review.city.state_name.present? %><%=review.city.state_name%>, <%end%><%= review.city.country_name %>
             <%end%>    
         </h4>
+          <h5> <%= review.title %> </h5>
           <div class="star-rating" data-score= <%= review.rating %> ></div>
           <p><%= review.comment %></p>
           <br />
