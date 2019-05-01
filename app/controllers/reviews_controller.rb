@@ -3,6 +3,11 @@ class ReviewsController < ApplicationController
   before_action :set_city
   before_action :authenticate_user!
 
+  def show
+    @review = Review.find(params[:id])
+    # render 'teaching_evaluations/show.html.erb'
+  end
+
   # GET /reviews/new
   def new
     @review = Review.new
@@ -64,9 +69,8 @@ class ReviewsController < ApplicationController
       params.require(:review).permit(:rating, :comment)
     end
 
-    def
+    def show
       @reviews = Review.where(city_id: @city.id).order("created_at DESC")
-
       if @reviews.blank?
         @avg_review = 0
       else

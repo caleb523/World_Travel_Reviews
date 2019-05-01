@@ -16,9 +16,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  rating: 1
-  comment: MyText
+  city_name: Austin
+  country_name: United States of America
+  state_code: TX
+  rating: 5
+  comment: South by Southwest grabbed me on my first visit. I've been coming back every year to this little hidden gem of a city here in America. Good food, beautiful city, and so much to do.
+
 
 two:
-  rating: 1
-  comment: MyText
+  city_name: Antigua
+  country_name: Guatemala
+  state_code: N/A
+  rating: 5
+  comment: This city was a fantastic place to visit. Although my wife and I have been here before, coming here never gets old. If I had the money I'd move here and live here for the rest of my life.
