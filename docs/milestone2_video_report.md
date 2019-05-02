@@ -1,17 +1,17 @@
 # Video Report
 
-- Project: xxx (Nickname of Project)
-- Iteration: xxx (Milestone Name; e.g., Milestone 1)
-- Demo Video URL: <https://youtu.be/xxx> (URL for demo video)
+- Project: Coven2
+- Iteration: Milestone 2
+- Demo Video URL: https://www.youtube.com/watch?v=-B-jAf6S6GI&feature=youtu.be
 
 ## Who Did What in the Video
 
-- xx:xx:xx (Offset into Video; sort sequentially)
-  - Contributor: xxx (Team Member Name)
-  - Contribution: xxx (Description of Work on Display)
-  - Task IDs: xxx (List of Relevant Task IDs from the Task Report)
+- 5:05
+  - Contributor: Davin
+  - Contribution: Created the star rating system
+  - Task IDs: issue 30
 
-- xx:xx:xx
-  - Contributor: xxx
-  - Contribution: xxx
-  - Task IDs: xxx
+- Everything else
+  - Contributor: Caleb
+  - Contribution: Created everything else
+  - Task IDs: all of the ones assigned to me
