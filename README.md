@@ -1,9 +1,10 @@
-# xxx (Project Nickname)
+# World Travel Reviews
 
-## How to Run the Web App (Instructions for the Instructors)
+## Video Overview
+- `https://www.youtube.com/watch?v=G9_LYsdoYAs`
 
-***Modify the instructions below if necessary.***
-
+## How to Run the Web App
+- `sudo apt-get install imagemagick`
 - `bundle install`
 - `rails db:migrate`
 - `rails db:seed`
