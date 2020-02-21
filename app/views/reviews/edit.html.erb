@@ -1,4 +1,4 @@
-<h1>Editing Review</h1>
+<h1>Editing your review for:<br /><%=@city.city_name%>, <%if @city.state_name != nil %><%=@city.state_name%>, <% end %><%=@city.country_name%></h1>
 <% if @review.user_id == current_user.id %>
 <%= render 'form', review: @review %>
 <% else %>

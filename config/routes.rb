@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :users, :only =>[:show]
   root to: 'pages#home'
   resources :cities do
-  	resources :reviews, except: [:show, :index]
+    resources :reviews, except: [:show, :index]
+    delete 'reviews/:id', to: 'reviews#destroy'
   end
   get 'home', to: 'pages#home', as: 'home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

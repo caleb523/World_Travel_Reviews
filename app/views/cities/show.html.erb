@@ -14,14 +14,20 @@
       <div class="example">
       <% @reviews.each do |review| %>
         <div class="reviews">
+          <p><img width=40% style="float:right" class="expand" src="<%=review.image%>" alt="" /></p>
+          <div class="img-full-container">
+	<img src="">
+	<div class="close">Click To Close</div>
+</div>
           <h5><%= link_to review.user.username, user_path(review.user.username)%></h5>
-          <h3><%= review.title %></h3>
-          <br />
           <div class="star-rating" data-score= <%= review.rating %> ></div>
+          <br />
+          <h3><%= review.title %></h3>
           <br />
           <p><%= review.comment %></p>
           <%if review.user == current_user%>
-          <h4><%= link_to "Edit review", edit_city_review_path(@city, review)%></h4>
+          <h4><%= link_to "Edit review", edit_city_review_path(@city, review)%>
+          <danger><h4><%= link_to "Delete review", city_review_path(@city, review), method: :delete %></h4></danger></h4>
           <% end %>
         </div>
         <br />
@@ -45,5 +51,27 @@
 	      score: function() {
 	            return $(this).attr('data-score');
 	    }
-	  });
+    });
+    /**
+* Required jquery
+* Html <img class="expand" src="image.png">
+*/
+(function($){
+  $.each($('.expand'),function(i,obj){
+  	$(obj).on('click',function(e){
+  		e.preventDefault();
+			var link = ($(obj).attr('src')) ? $(obj).attr('src') : $(obj).attr('href') ;
+  		$('.img-full-container').fadeIn();
+  		$('.img-full-container img').attr('src',link);
+  	});
+  });
+  // close preview
+  $('.img-full-container').on('click',function(e){
+  	$('.img-full-container').fadeOut();
+  	$('.img-full-container img').attr('src','');
+  	var wait = setTimeout(function(){
+  		$('.img-full-container').css('display','none');
+  	},1000);
+  });
+})(jQuery);
 	</script>

@@ -26,7 +26,9 @@ body nav #navbarsExampleDefault ul li {
   font-size: 16px;
 }
 
-
+h4 danger h4 a:link {
+  color: #cd225e;
+}
 .alert.alert-success {
   background-color: #d9b310;
   color: #fffff0;

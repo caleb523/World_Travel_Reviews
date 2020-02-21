@@ -58,7 +58,7 @@
   - Description: As a logged-in user, I want to be able to add photos and videos to my reviews to provide additional context to them
   - Estimate: 0.5
   - Priority: 100
-  - Status: Not started
+  - Status: Half-completed
 
 - US Sort Reviews
   - Description: As a user of any type, I want to be able to sort the reviews for a city so that I can see the most recent or the most helpful reviews
@@ -70,7 +70,7 @@
   - Description: As a logged-in user, I want to be able to edit my reviews so I can correct any errors or add any new information after it has been posted
   - Estimate: 1
   - Priority: 60
-  - Status: Not started
+  - Status: Completed
 
 - US Reply to Review
   - Description: As a logged-in user, I want to be able to respond to other reviews so that I can add information or provide clarification to the review
@@ -94,10 +94,11 @@
   - Description: As a logged-in user, I want to be able to delete my reviews so that I can remove my comments if I no longer want to share them
   - Estimate: 1
   - Priority: 70
-  - Status: Not started
+  - Status: Completed
 
 - US Moderate Review
   - Description: As a moderator, I want to be able to fully manage user reviews so that I can clean up the site from spam, irrelevant reviews, and reviews with incorrect location
   - Estimate: 1.5
   - Priority: 100
   - Status: Not started
+  

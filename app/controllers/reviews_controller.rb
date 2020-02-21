@@ -45,7 +45,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     respond_to do |format|
-      format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
+      format.html { redirect_back(fallback_location: root_path, notice: 'Review was successfully deleted.') }
       format.json { head :no_content }
     end
   end
@@ -62,12 +62,11 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:title, :rating, :comment)
+      params.require(:review).permit(:title, :rating, :comment, :image)
     end
 
     def show
       @reviews = Review.where(city_id: @city.id).order("created_at DESC")
-
       if @reviews.blank?
         @avg_review = 0
       else

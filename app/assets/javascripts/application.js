@@ -16,3 +16,22 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= Html <img class="expand" src="image.png">
+(function($){
+    $.each($('.expand'),function(i,obj){
+        $(obj).on('click',function(e){
+            e.preventDefault();
+              var link = ($(obj).attr('src')) ? $(obj).attr('src') : $(obj).attr('href') ;
+            $('.img-full-container').fadeIn();
+            $('.img-full-container img').attr('src',link);
+        });
+    });
+    // close preview
+    $('.img-full-container').on('click',function(e){
+        $('.img-full-container').fadeOut();
+        $('.img-full-container img').attr('src','');
+        var wait = setTimeout(function(){
+            $('.img-full-container').css('display','none');
+        },1000);
+    });
+  })(jQuery);
